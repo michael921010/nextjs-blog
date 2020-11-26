@@ -1,6 +1,6 @@
 import Head from "next/head";
-import styles from "./index.module.css";
-import utilStyles from "styles/utils.module.css";
+import styles from "./index.module.scss";
+import utilStyles from "styles/utils.module.scss";
 import Link from "next/link";
 
 const name = "Michael Li";
@@ -10,7 +10,7 @@ export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/static/favicon.ico" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
