@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Head } from "@next";
 import { Layout, Date } from "components";
 import { getAllPostIds, getPostData } from "lib/posts";
 import utilStyles from "styles/utils.module.scss";
@@ -6,7 +6,14 @@ import logos from "public/images/posts";
 
 export default function Post({ postData }) {
   return (
-    <Layout logo={logos[postData.id]} id={postData}>
+    <Layout
+      logo={logos[postData.id]}
+      id={postData}
+      href={{
+        pathname: "/images/[type]/[id]",
+        query: { type: "posts", id: postData.id },
+      }}
+    >
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -17,7 +24,6 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-      {/* <h1>{postData.id}</h1> */}
     </Layout>
   );
 }

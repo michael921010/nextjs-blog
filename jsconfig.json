@@ -1,6 +1,11 @@
 // jsconfig.json or tsconfig.json
 {
   "compilerOptions": {
-    "baseUrl": "."
-  }
+    "baseUrl": ".",
+    "paths": {
+      "@next": ["./src/next/index"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
 }

@@ -1,14 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
+import { Head, Image, Link } from "@next";
 import styles from "./index.module.scss";
 import utilStyles from "styles/utils.module.scss";
-import Link from "next/link";
-import c from "classnames";
+import { Avatar, ViewSource } from "components";
 
 const name = "Michael Li";
 export const siteTitle = "Michael's Blog";
 
-export default function Layout({ children, home, id, logo }) {
+export default function Layout({ children, home, id, logo, href }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -29,37 +27,38 @@ export default function Layout({ children, home, id, logo }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <img
-              src="/images/avatar.png"
-              className={c(styles.headerHomeImage, utilStyles.borderCircle)}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <div className={styles.bgWrap}>
+              <Image
+                alt="Mountains"
+                src="/images/mountains.jpg"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              />
+            </div>
+            <Avatar name={name} />
+            <h1 className={utilStyles.headingLg}>{name}</h1>
           </>
         ) : (
           <>
-            <Link href="/">
-              <a>
-                <Image
-                  alt={id}
-                  src={logo}
-                  layout="intrinsic"
-                  width={700}
-                  height={475}
-                />
-              </a>
-            </Link>
+            {logo && (
+              <Link href={href}>
+                <a>
+                  <Image
+                    alt={id}
+                    src={logo}
+                    layout="intrinsic"
+                    width={700}
+                    height={475}
+                  />
+                </a>
+              </Link>
+            )}
           </>
         )}
       </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <ViewSource />
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }
