@@ -14,6 +14,8 @@
     "generic-names": "^3.0.0",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.6.2",
     "node-sass": "^5.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",

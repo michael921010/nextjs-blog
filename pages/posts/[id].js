@@ -2,10 +2,11 @@ import Head from "next/head";
 import { Layout, Date } from "components";
 import { getAllPostIds, getPostData } from "lib/posts";
 import utilStyles from "styles/utils.module.scss";
+import logos from "public/images/posts";
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <Layout logo={logos[postData.id]} id={postData}>
       <Head>
         <title>{postData.title}</title>
       </Head>

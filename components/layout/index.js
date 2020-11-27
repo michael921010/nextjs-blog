@@ -1,12 +1,14 @@
 import Head from "next/head";
+import Image from "next/image";
 import styles from "./index.module.scss";
 import utilStyles from "styles/utils.module.scss";
 import Link from "next/link";
+import c from "classnames";
 
 const name = "Michael Li";
 export const siteTitle = "Michael's Blog";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, id, logo }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +31,7 @@ export default function Layout({ children, home }) {
           <>
             <img
               src="/images/avatar.png"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              className={c(styles.headerHomeImage, utilStyles.borderCircle)}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -38,18 +40,15 @@ export default function Layout({ children, home }) {
           <>
             <Link href="/">
               <a>
-                <img
-                  src="/images/avatar.png"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
+                <Image
+                  alt={id}
+                  src={logo}
+                  layout="intrinsic"
+                  width={700}
+                  height={475}
                 />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
           </>
         )}
       </header>
