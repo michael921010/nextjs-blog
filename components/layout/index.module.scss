@@ -39,3 +39,7 @@
   padding: 1px 20px;
   border-radius: 10px;
 }
+
+.name {
+  @include heading("lg");
+}

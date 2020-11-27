@@ -1,6 +1,5 @@
 import { Head, Image, Link } from "@next";
 import styles from "./index.module.scss";
-import utilStyles from "styles/utils.module.scss";
 import { Avatar, ViewSource } from "components";
 
 const name = "Michael Li";
@@ -37,7 +36,7 @@ export default function Layout({ children, home, id, logo, href }) {
               />
             </div>
             <Avatar name={name} />
-            <h1 className={utilStyles.headingLg}>{name}</h1>
+            <h1 className={styles.name}>{name}</h1>
           </>
         ) : (
           <>

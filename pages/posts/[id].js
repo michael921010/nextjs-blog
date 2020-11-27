@@ -1,7 +1,7 @@
 import { Head } from "@next";
 import { Layout, Date } from "components";
 import { getAllPostIds, getPostData } from "lib/posts";
-import utilStyles from "styles/utils.module.scss";
+import styles from "styles/post.module.scss";
 import logos from "public/images/posts";
 
 export default function Post({ postData }) {
@@ -18,8 +18,8 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1 className={styles.title}>{postData.title}</h1>
+        <div className={styles.text}>
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
