@@ -1,6 +1,6 @@
 .success {
-  color: green;
+  color: map-get($colors, success);
 }
 .error {
-  color: red;
+  color: map-get($colors, error);
 }

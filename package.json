@@ -11,12 +11,17 @@
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
+    "generic-names": "^3.0.0",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
     "node-sass": "^5.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "remark": "^13.0.0",
-    "remark-html": "^13.0.1"
+    "remark-html": "^13.0.1",
+    "sass-resources-loader": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-react-css-modules": "^5.2.6"
   }
 }
