@@ -1,9 +1,9 @@
 // jsconfig.json or tsconfig.json
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@next": ["./src/next/index"]
+      "@next": ["./next"]
     }
   },
   "include": ["./src/**/*"],

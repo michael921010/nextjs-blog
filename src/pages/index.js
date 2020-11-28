@@ -1,6 +1,6 @@
 import { Head, Link } from "@next";
 import { Date, Layout } from "components";
-import { siteTitle } from "components/layout";
+import { siteTitle } from "components/Layout";
 import styles from "styles/root.module.scss";
 import { getSortedPostsData } from "lib/posts";
 

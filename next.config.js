@@ -9,7 +9,7 @@ const nextConfig = {
       test: /.scss$/,
       loader: "sass-resources-loader",
       options: {
-        resources: ["./styles/variables.scss"],
+        resources: ["./src/styles/variables.scss"],
       },
     });
 

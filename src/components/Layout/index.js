@@ -10,10 +10,7 @@ export default function Layout({ children, home, id, logo, href }) {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/static/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content={siteTitle} />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -29,7 +26,7 @@ export default function Layout({ children, home, id, logo, href }) {
             <div className={styles.bgWrap}>
               <Image
                 alt="Mountains"
-                src="/images/mountains.jpg"
+                src={require("images/mountains.jpg")}
                 layout="fill"
                 objectFit="cover"
                 quality={100}

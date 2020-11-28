@@ -2,7 +2,7 @@ import { Head } from "@next";
 import { Layout, Date } from "components";
 import { getAllPostIds, getPostData } from "lib/posts";
 import styles from "styles/post.module.scss";
-import logos from "public/images/posts";
+import logos from "images/posts";
 
 export default function Post({ postData }) {
   return (

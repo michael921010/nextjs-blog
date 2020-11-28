@@ -1,7 +1,7 @@
 import { Head, Image } from "@next";
 import { useRouter } from "next/router";
 import { Layout } from "components";
-import logos from "public/images/posts";
+import logos from "images/posts";
 
 const ImageBackground = () => {
   const router = useRouter();
