@@ -2,6 +2,7 @@ const withPlugins = require("next-compose-plugins");
 const plugins = require("./plugins");
 
 const nextConfig = {
+  pageExtensions: ["page.js", "api.js"],
   webpack: (config) => {
     // 全域性變數和mixin
     config.module.rules.push({
