@@ -1,14 +1,8 @@
 import { Head, Image } from "@next";
-import { useRouter } from "next/router";
 import { Layout } from "components";
 import logos from "images/posts";
 
-const ImageBackground = () => {
-  const router = useRouter();
-  const { type, id } = router.query;
-
-  if (!id) return `loading`;
-
+export default function ImageBackground({ id, type }) {
   return (
     <Layout>
       <Head>
@@ -23,6 +17,8 @@ const ImageBackground = () => {
       />
     </Layout>
   );
-};
+}
 
-export default ImageBackground;
+ImageBackground.getInitialProps = (ctx) => {
+  return { id: ctx.query?.id, type: ctx.query?.type };
+};
